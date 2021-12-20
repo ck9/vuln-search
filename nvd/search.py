@@ -1,4 +1,4 @@
-import requests, json
+import requests, json, re
 
 from pprint import pprint
 
