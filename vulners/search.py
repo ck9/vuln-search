@@ -7,8 +7,9 @@ import vulners
 vulners_api = vulners.VulnersApi(api_key=os.getenv('VULNERS_APIKEY'))
 
 sign = input('Enter Signature : ')
-sign = re.sub('^/+', '', sign)
-res = vulners_api.find_exploit_all(sign+"")
+sign = '"'+re.sub('^/+', '', sign)+'"'
+print(sign)
+res = vulners_api.find_exploit_all(sign)
 if len(res)!=0:
   arr = {}
   for item in res:
