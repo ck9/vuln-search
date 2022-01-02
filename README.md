@@ -7,3 +7,8 @@ command line search tools for vulnerabilities
 - requests
 - cve_searchsploit
 - vulners
+
+# Usage
+```bash
+python3 search.py
+```
