@@ -24,8 +24,7 @@ for xml in xmls:
 
 conn = sqlite3.connect('exploits.db')
 c = conn.cursor()
-c.execute('CREATE TABLE IF NOT EXISTS exploits (id , url, description)')
+c.execute('CREATE TABLE IF NOT EXISTS exploits (id , url text UNIQUE, description)')
 c.executemany("REPLACE INTO exploits (id , url, description) VALUES(?, ?, ?)", data)
-c.execute("INSERT INTO exploits (id , url, description) VALUES('test1','test2','test3')")
 conn.commit()
 conn.close()
