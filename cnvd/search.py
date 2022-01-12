@@ -1,8 +1,8 @@
-import sqlite3
+import sqlite3, re
 from pprint import pprint
 
 def search(sign):
-
+  sign = re.sub('^/+', '', sign)
   conn = sqlite3.connect('exploits.db')
   c = conn.cursor()
   c.execute("SELECT * FROM exploits WHERE description like ?", ('%'+sign+'%',))

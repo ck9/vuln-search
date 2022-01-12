@@ -11,9 +11,9 @@ from exploitdb.search import search as search_edb
 pprint(search_edb(sign))
 
 print("vulners")
-from vulners.search import search as search_vulners
+from vulners_.search import search as search_vulners
 pprint(search_vulners(sign))
 
-print("vulners")
+print("cnvd")
 from cnvd.search import search as search_cnvd
 pprint(search_cnvd(sign))
