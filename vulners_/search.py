@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 def search(sign):
 
   load_dotenv()
-  print(os.getenv('VULNERS_APIKEY'))
   vulners_api = vulners.VulnersApi(api_key=os.getenv('VULNERS_APIKEY'))
 
   sign = '"'+re.sub('^/+', '', sign)+'"'
