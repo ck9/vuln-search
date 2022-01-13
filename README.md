@@ -1,14 +1,25 @@
 # vuln-search
 command line search tools for vulnerabilities
 
-# Requirements
-- python3
-- dotenv
-- requests
-- cve_searchsploit
-- vulners
-
 # Usage
 ```bash
-python3 search.py
+$ python3 search.py
 ```
+
+# Installation
+
+- install required packages
+```bash
+$ cd vuln-search
+$ pip3 install -r requirements.txt
+```
+
+- download xml files from cnvd, and put xml files into cnvd/xml/* (https://www.cnvd.org.cn/shareData/list)
+
+
+- database update
+```bash
+$ python3 update.py
+```
+
+- make .env and add API keys
