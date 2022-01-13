@@ -3,7 +3,7 @@ command line search tools for vulnerabilities
 
 # Usage
 ```bash
-$ python3 search.p
+$ python3 search.py
 ```
 
 # Installation
