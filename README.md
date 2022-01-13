@@ -14,7 +14,7 @@ $ cd vuln-search
 $ pip3 install -r requirements.txt
 ```
 
-- download xml files from cnvd, and put xml files into cnvd/xml/* (https://www.cnvd.org.cn/shareData/list)
+- download xml files from cnvd, and put xml files into cnvd/xmls/* (https://www.cnvd.org.cn/shareData/list)
 
 
 - database update
