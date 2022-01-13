@@ -3,19 +3,21 @@ command line search tools for vulnerabilities
 
 # Usage
 ```bash
-$ python3 search.py
+$ python3 search.p
 ```
 
 # Installation
 
 - install required packages
 ```bash
+$ git clone https://github.com/ck9/vuln-search
 $ cd vuln-search
 $ pip3 install -r requirements.txt
 ```
 
-- download xml files from cnvd, and put xml files into cnvd/xmls/* (https://www.cnvd.org.cn/shareData/list)
+- download xml files from CNVD onto cnvd/xmls/
 
+  CNVD: https://www.cnvd.org.cn/shareData/list
 
 - database update
 ```bash
