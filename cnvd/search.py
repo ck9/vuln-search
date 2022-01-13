@@ -9,5 +9,9 @@ def search(sign):
   res = c.fetchall()
   conn.commit()
   conn.close()
-
-  return res
+  
+  arr = {}
+  for item in res:
+    arr[item[0]] = item[1]
+  
+  return arr
