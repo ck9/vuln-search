@@ -13,15 +13,17 @@ def search(sign):
     arr = {}
     for item in res:
       if len(item["cvelist"])!=0:
-        cve = item["cvelist"][0]
+        for cve in item["cvelist"]:
+          if 'CVE' not in cve:
+            cve = 'CVE-'+cve
+          arr[cve] = item["vhref"]
       else: 
         res = re.search(r'CVE-[0-9]+-[0-9]+',item["title"])
         if res:
           cve = res.group()
         else:
-          res = re.search(r'CVE-[0-9]+-[0-9]+',item["title"])
           cve = item["id"]
-      arr[cve] = item["vhref"]
+        arr[cve] = item["vhref"]
     return arr
   else:
     return []
