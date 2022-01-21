@@ -15,4 +15,4 @@ def search(sign):
       arr[cve] = 'https://nvd.nist.gov/vuln/detail/'+cve
     return arr
   else:
-    return []
+    return {}

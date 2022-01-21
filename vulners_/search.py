@@ -26,4 +26,4 @@ def search(sign):
         arr[cve] = item["vhref"]
     return arr
   else:
-    return []
+    return {}
