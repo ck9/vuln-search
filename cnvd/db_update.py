@@ -4,7 +4,7 @@
 
 import xml.etree.ElementTree as ET
 import sqlite3
-import glob, os.path
+import glob, os.path, re
 
 def update():
   data = []
@@ -21,11 +21,17 @@ def update():
         id = cves.find("cve").find("cveNumber").text
       description = child.find("description").text
       description = ''.join(description.split())
-      data.append([id, source, description])
+      pattern = '([0-9A-Za-z\-\._]+(/[0-9A-Za-z\-\._]+)+)'
+      result = re.search(pattern,description)
+      if(result != None):
+        sign = result.group()
+      else:
+        sign = ''
+      data.append([id, source, description, sign])
 
   conn = sqlite3.connect('exploits.db')
   c = conn.cursor()
-  c.execute('CREATE TABLE IF NOT EXISTS exploits (id , url text UNIQUE, description)')
-  c.executemany("REPLACE INTO exploits (id , url, description) VALUES(?, ?, ?)", data)
+  c.execute('CREATE TABLE IF NOT EXISTS exploits (id , url text UNIQUE, description, path)')
+  c.executemany("REPLACE INTO exploits (id , url, description, path) VALUES(?, ?, ?, ?)", data)
   conn.commit()
   conn.close()
