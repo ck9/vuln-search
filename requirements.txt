@@ -2,3 +2,4 @@ cve_searchsploit
 python-dotenv
 requests
 vulners
+Levenshtein
