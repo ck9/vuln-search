@@ -1,6 +1,13 @@
+from functions import get_option
 from pprint import pprint
 
+opts = get_option()
+
 sign = input('Enter Signature : ')
+
+# デフォルトではパスのみ検索 -qオプション指定でクエリ含めて検索
+if(not opts.querySearch):
+  sign = sign.split("?")[0]
 
 print("nvd")
 from nvd.search import search as search_nvd
