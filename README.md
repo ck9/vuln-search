@@ -3,7 +3,11 @@ command line search tools for vulnerabilities
 
 # Usage
 ```bash
-$ python3 search.py
+$ python3 search.py [options]
+
+  Options:
+    -h, --help          Show help message.
+    -q, --querySearch   Search path & query.
 ```
 
 # Installation
@@ -24,4 +28,4 @@ $ pip3 install -r requirements.txt
 $ python3 update.py
 ```
 
-- make .env and add API keys
+- make .env file and add API keys
