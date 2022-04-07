@@ -8,6 +8,8 @@ $ python3 search.py [options]
   Options:
     -h, --help          Show help message.
     -q, --querySearch   Search path & query.
+    -y, --yamlFormat      Return YAML Format.
+    -c COUNT, --count COUNT    Number of output. (default: 10)
 ```
 
 # Installation
@@ -19,7 +21,7 @@ $ cd vuln-search
 $ pip3 install -r requirements.txt
 ```
 
-- download xml files from CNVD onto cnvd/xmls/
+- download xml files from CNVD onto src/cnvd/xmls/
 
   CNVD: https://www.cnvd.org.cn/shareData/list
 
