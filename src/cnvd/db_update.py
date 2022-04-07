@@ -8,7 +8,7 @@ import glob, os.path, re
 
 def update():
   data = []
-  xmls = glob.glob(os.getcwd()+"/cnvd/xmls/*")
+  xmls = glob.glob(os.getcwd()+"/xmls/*")
   for xml in xmls:
     xml_tree = ET.parse(xml)
     xml_root = xml_tree.getroot()
