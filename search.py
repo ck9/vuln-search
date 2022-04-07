@@ -1,26 +1,25 @@
-from src.functions import get_option
+from unittest import result
+from src.functions import *
 from pprint import pprint
 
-opts = get_option()
+opts = getOption()
 
 sign = input('Enter Signature : ')
 
 # デフォルトではパスのみ検索 -qオプション指定でクエリ含めて検索
-if(not opts.querySearch):
+if not opts.querySearch:
   sign = sign.split("?")[0]
 
-print("nvd")
+count = opts.count
+
 from src.nvd.search import search as search_nvd
-pprint(search_nvd(sign))
-
-print("exploitdb")
 from src.exploitdb.search import search as search_edb
-pprint(search_edb(sign))
-
-print("vulners")
 from src.vulners_.search import search as search_vulners
-pprint(search_vulners(sign))
-
-print("cnvd")
 from src.cnvd.search import search as search_cnvd
-pprint(search_cnvd(sign))
+
+tagsList = makeResult([search_nvd(sign),search_edb(sign),search_vulners(sign),search_cnvd(sign)])
+
+tagsPrint(tagsList,count)
+
+if opts.yamlFormat:
+  yamlOutput(sign,tagsList,count)
