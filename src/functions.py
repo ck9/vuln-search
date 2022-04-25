@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 from pprint import pprint
-import yaml
+import yaml, os
+from dotenv import load_dotenv
 
 def getOption():
     argparser = ArgumentParser()
@@ -59,5 +60,7 @@ def yamlOutput(sign,tagsList,count):
         n += 1
     tagStr = ", ".join(outputList['tags'])
     memoStr = ", ".join(outputList['memos'])
-    obj = [{'author':'', 'condition': [sign], 'memo': memoStr, 'name': tagStr, 'tag': tagStr}]
+    author = os.getenv('YAML_AUTHOR') if os.getenv('YAML_AUTHOR') is not None else ''
+    obj = [{'author': author, 'condition': [sign], 'memo': memoStr, 'name': tagStr, 'tag': tagStr}]
     print('\n',yaml.dump(obj))
+    
