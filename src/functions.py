@@ -62,5 +62,5 @@ def yamlOutput(sign,tagsList,count):
     memoStr = ", ".join(outputList['memos'])
     author = os.getenv('YAML_AUTHOR') if os.getenv('YAML_AUTHOR') is not None else ''
     obj = [{'author': author, 'condition': [sign], 'memo': memoStr, 'name': tagStr, 'tag': tagStr}]
-    print('\n',yaml.dump(obj))
+    print('\n',yaml.dump(obj), sep='')
     
