@@ -21,5 +21,5 @@ tagsList = makeResult([search_nvd(sign),search_edb(sign),search_vulners(sign),se
 
 tagsPrint(tagsList,count)
 
-if opts.yamlFormat:
+if opts.yamlFormat and len(tagsList)>0:
   yamlOutput(sign,tagsList,count)
